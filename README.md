@@ -14,23 +14,22 @@ At this time, the K8s Secret is deployed manually.
    _**not**_ be committed to the Github repository.
 
    ```
-   cp .env.sample .env
+   cp secrets.env.empty secrets.env
    ```
 
-2. Add values to `.env` file. These will likely come from secure external
+2. Add values to `secrets.env` file. These will likely come from secure external
    sources, e.g. PasswordState.
 
-3. Export variables defined in `.env` to local environment. There are many ways
+3. Export variables defined in `secrets.env` to local environment. There are many ways
    to do this, here's one:
 
    ```
-   set -a && source .env && set +a
+   set -a && source secrets.env && set +a
    ```
 
 4. Apply the Secret to the K8s cluster with values from local environment
 
    ```
-   envsubst < connector-pbcore-json-secret.yml | kubectl apply -f -
+   envsubst < secrets.yml.template | kubectl apply -f -
    ```
-
-
+   

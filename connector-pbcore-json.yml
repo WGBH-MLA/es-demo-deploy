@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: connector-pbcore-json
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: connector-pbcore-json
+  template:
+    metadata:
+      labels:
+        app: connector-pbcore-json
+    spec:
+      containers:
+        - name: elastic-connectors
+          image: docker.elastic.co/integrations/elastic-connectors:8.17.4
+          args: ["/app/bin/elastic-ingest", "-c", "/config/config.yml"]
+          volumeMounts:
+            - name: config-volume
+              mountPath: /config
+              readOnly: true
+      volumes:
+        - name: config-volume
+          secret:
+            secretName: connector-pbcore-json-secret

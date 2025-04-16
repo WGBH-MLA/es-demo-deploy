@@ -17,5 +17,5 @@ spec:
     spec:
       containers:
         - name: es-demo
-          image: ghcr.io/wgbh-mla/es_demo:main
+          image: ghcr.io/wgbh-mla/es-demo:main
           command: ["sleep", "infinity"]

@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: es-demo
-  namespace: es-demo
   labels:
     app: es-demo
 spec:

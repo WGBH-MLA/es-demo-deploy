@@ -7,3 +7,9 @@ spec:
   count: 1
   elasticsearchRef:
     name: quickstart
+  config:
+    server.publicBaseUrl: https://search.dev.wgbh-mla.org
+  http:
+    tls:
+      selfSignedCertificate:
+        disabled: true

@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: elastic-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+spec:
+  tls:
+  - hosts:
+    - elastic.dev.wgbh-mla.org
+    secretName: elastic-tls-production
+  rules:
+  - host: elastic.dev.wgbh-mla.org
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: quickstart-es-http
+            port:
+              number: 9200

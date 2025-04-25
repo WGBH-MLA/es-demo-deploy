@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: elastic-connectors
-          image: docker.elastic.co/integrations/elastic-connectors:8.17.4
+          image: docker.elastic.co/integrations/elastic-connectors:8.17.5
           args: ["/app/bin/elastic-ingest", "-c", "/config/config.yml"]
           volumeMounts:
             - name: config-volume

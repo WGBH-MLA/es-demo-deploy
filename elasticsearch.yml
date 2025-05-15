@@ -10,7 +10,7 @@ spec:
       config:
         node.roles: ["master", "data", "ingest"]
         node.store.allow_mmap: false
-        http.cors.allow-origin: https://*.dev.wgbh-mla.org
+        http.cors.allow-origin: /^https:\/\/*.dev.wgbh-mla.org/
         http.cors.enabled: true
         http.cors.allow-credentials: true
         http.cors.allow-methods: OPTIONS, HEAD, GET, POST, PUT, DELETE

@@ -1,0 +1,16 @@
+config.yml:
+  elasticsearch:
+    host: http://your-es-host:9200
+    api_key: YOUR_API_KEY
+  connectors:
+    - connector_id: S3_CONNECTOR_ID
+      service_type: s3
+      api_key: YOUR_API_KEY
+  ssl:
+    certificate_verification: false
+  s3:
+    access_key_id: AWS_ACCESS_KEY_ID
+    secret_access_key: AWS_SECRET_ACCESS_KEY
+    bucket_name: AWS_BUCKET_NAME
+  service:
+    log_level: DEBUG
